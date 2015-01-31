@@ -1,0 +1,18 @@
+import java.util.Arrays;
+
+import org.jtransforms.fft.*;
+
+public class FFTTester {
+	public static void main (String[] args) {
+		DoubleFFT_1D dft = new DoubleFFT_1D(5);
+		final int NUM_SAMPLE = 12;
+		double[] testIn = new double[2 * NUM_SAMPLE];
+		int index = 0;
+		for (double i = 0; i < 2 * Math.PI; i += 2 * Math.PI / NUM_SAMPLE) {
+			testIn[index++] = Math.sin(i);
+			testIn[index++] = 0;
+		}
+		dft.complexForward(testIn);
+		System.out.println(Arrays.toString(testIn));
+	}
+}
