@@ -1,2 +1,2 @@
 # HackRice2015
-Some crazy awesome ****.
+AR (Audio Response) Code.
