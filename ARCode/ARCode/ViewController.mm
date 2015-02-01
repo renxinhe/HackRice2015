@@ -21,6 +21,23 @@
     self.analyzer = [[FFTAnalyzer alloc] initWithDelegate:self];
     [self clearAr];
     [self.analyzer setup];
+    [NSTimer scheduledTimerWithTimeInterval:1/60.0
+                                     target:self
+                                   selector:@selector(animate)
+                                   userInfo:nil
+                                    repeats:YES];
+    self.btn.alpha = 0;
+}
+
+-(void)animate{
+    time += 1/60.0;
+    double trans1 = sin(time * 2 * M_PI / 2) * 0.05 + 0.005 * (rand()%3) + 0.9;
+    self.circle1.transform = CGAffineTransformScale(CGAffineTransformIdentity, trans1, trans1);
+    double trans2 = sin(time * 2 * M_PI * 2) * 0.05 + 0.1* prevf/600.0 + 0.005 * (rand()%7) + 0.9;
+    self.circle2.transform = CGAffineTransformScale(CGAffineTransformIdentity, trans2, trans2);
+    double trans3 = sin(time * 2 * M_PI * 3.17) * 0.05 + 0.2* prevf/600.0 + 0.005 * (rand()%7) + 0.9;
+    self.circle3.transform = CGAffineTransformScale(CGAffineTransformIdentity, trans3, trans3);
+    time = fmod(time, (8*M_PI));
 }
 
 -(void)enterBackground{
@@ -55,7 +72,8 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
 
 
 -(void)didReceiveFreq:(float)freq{
-    NSLog(@"WTF: %.2f %d", freq, ar.count);
+    prevf = freq;
+    NSLog(@"f%.2f",freq);
     [ar addObject:[NSNumber numberWithFloat:freq]];
     if(!started) {
         if (ar.count > MINLEN) {
@@ -67,6 +85,7 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
                 startcount = ct;
                 startnotcount = 0;
                 NSLog(@"Start %.2f", startf);
+                animateFade(self.bar1, 1.0);
             }
         }
     } else if(!foundlen) {
@@ -87,6 +106,7 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
                 lencount = ct;
                 lennotcount = 0;
                 NSLog(@"End %.2f", maxf);
+                animateFade(self.bar2, 1.0);
             }
         }
     }else if(!startmsg){
@@ -109,6 +129,7 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
                 minlen = (int)(lencount * 0.33/2);
                 maxlen = (int)(lencount * 0.66/2);
                 NSLog(@"%.2f %.2f %d %d %d L: %d %d  S: %d %d", startf, maxf, minlen, maxlen, (int)(lencount * 0.33/2), lencount, lennotcount, startcount, startnotcount);
+                animateFade(self.bar3, 1.0);
             }
         }
     }else{
@@ -127,6 +148,7 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
             }
             if((lastnotcount > 2 * lastcount  && lastcount > minlen * 1.5) || lastnotcount > maxlen) {
                 [self receivedMsg:lastf];
+                [self didFinish];
                 [self clearAr];
             }
             if( ct >= minlen) {
@@ -195,8 +217,74 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
                 [str appendString:[NSString stringWithFormat:@"%c", (int)(a | (b<<4))]];
             }
             NSLog(@"%@",str);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[[UIAlertView alloc] initWithTitle:@"Message" message:str delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
+            });
+            animateFade(self.bar4, 1.0);
         }
     }
+}
+
+-(void)didFinish{
+    if (datatype == LINK) {
+        NSMutableString *str = [[NSMutableString alloc] init];
+        for(int i = 3; i < (int)data.count; i++){
+            long a = [[data objectAtIndex:i] integerValue];
+            [str appendString:[NSString stringWithFormat:@"%lx", a]];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *udata = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[@"http://arcodez.azurewebsites.net/?data=" stringByAppendingString:str]] encoding:NSUTF8StringEncoding error:nil];
+            if(udata){
+                //[[[UIAlertView alloc] initWithTitle:@"URL" message:udata delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:udata]];
+            }
+            NSLog(@"%@ %@",str, udata);
+        });
+        animateFade(self.bar4, 1.0);
+    }
+    if(datatype == PIC){
+        NSMutableString *str = [[NSMutableString alloc] init];
+        for(int i = 3; i < (int)data.count; i++){
+            long a = [[data objectAtIndex:i] integerValue];
+            [str appendString:[NSString stringWithFormat:@"%lx", a]];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *udata = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[@"http://arcodez.azurewebsites.net/?data=" stringByAppendingString:str]] encoding:NSUTF8StringEncoding error:nil];
+            if(udata){
+                //[[[UIAlertView alloc] initWithTitle:@"URL" message:udata delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
+                self.picture.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:udata]]];
+                self.btn.alpha = 1;
+            }
+            NSLog(@"%@ %@",str, udata);
+        });
+        animateFade(self.bar4, 1.0);
+    }
+}
+
+-(IBAction)close:(id)sender{
+    self.picture.image = nil;
+    self.btn.alpha = 0;
+}
+
+void animateFade(UIImageView *img, double alpha){
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0.25 animations:^{
+            img.alpha = alpha;
+        }];
+    });
+}
+
+- (void)playSoundList:(NSArray *)soundNames withCompletion:(void (^)(void))completion {
+    
+    if (![soundNames count]) return completion();
+    
+    NSString *firstSound = [soundNames objectAtIndex:0];
+    NSRange remainingRange = NSMakeRange(1, [soundNames count]-1);
+    NSArray *remainingSounds = [soundNames subarrayWithRange:remainingRange];
+    
+    [self playSound:firstSound withCompletion:^{
+        [self playSoundList:remainingSounds withCompletion:completion];
+    }];
 }
 
 -(void)clearAr{
@@ -216,6 +304,10 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
     lastf = 0.0;
     datatype = 0;
     maxlen = 0.0;
+    animateFade(self.bar1, 0.0);
+    animateFade(self.bar2, 0.0);
+    animateFade(self.bar3, 0.0);
+    animateFade(self.bar4, 0.0);
 }
 
 - (void)didReceiveMemoryWarning

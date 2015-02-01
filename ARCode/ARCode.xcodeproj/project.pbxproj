@@ -18,6 +18,8 @@
 		A0BE84AF1A7E716B00D88E3B /* Gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A41A7E716B00D88E3B /* Gear.png */; };
 		A0BE84B01A7E716B00D88E3B /* SendButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A51A7E716B00D88E3B /* SendButton.png */; };
 		A0BE84B11A7E716B00D88E3B /* Text.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A61A7E716B00D88E3B /* Text.png */; };
+		A0BE84B31A7E951B00D88E3B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84B21A7E951B00D88E3B /* Default-568h@2x.png */; };
+		A0BE84B51A7E992600D88E3B /* iOSIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84B41A7E992600D88E3B /* iOSIcon.png */; };
 		A0E2E1131A7D9222007C85C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1121A7D9222007C85C2 /* main.m */; };
 		A0E2E1161A7D9222007C85C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1151A7D9222007C85C2 /* AppDelegate.m */; };
 		A0E2E1191A7D9222007C85C2 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1181A7D9222007C85C2 /* ViewController.mm */; };
@@ -60,6 +62,8 @@
 		A0BE84A41A7E716B00D88E3B /* Gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gear.png; sourceTree = "<group>"; };
 		A0BE84A51A7E716B00D88E3B /* SendButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SendButton.png; sourceTree = "<group>"; };
 		A0BE84A61A7E716B00D88E3B /* Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Text.png; sourceTree = "<group>"; };
+		A0BE84B21A7E951B00D88E3B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A0BE84B41A7E992600D88E3B /* iOSIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOSIcon.png; sourceTree = "<group>"; };
 		A0E2E10D1A7D9222007C85C2 /* ARCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E2E1111A7D9222007C85C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E2E1121A7D9222007C85C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 		A0E2E10F1A7D9222007C85C2 /* ARCode */ = {
 			isa = PBXGroup;
 			children = (
+				A0BE84B41A7E992600D88E3B /* iOSIcon.png */,
+				A0BE84B21A7E951B00D88E3B /* Default-568h@2x.png */,
 				A0E2E1451A7DC679007C85C2 /* mo_def.h */,
 				A0E2E1461A7DC679007C85C2 /* mo_audio.h */,
 				A0E2E1471A7DC679007C85C2 /* mo_audio.mm */,
@@ -269,6 +275,7 @@
 				TargetAttributes = {
 					A0E2E10C1A7D9222007C85C2 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 7VJHZU9NB6;
 					};
 					A0E2E1251A7D9222007C85C2 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -302,12 +309,14 @@
 			files = (
 				A0E2E11C1A7D9222007C85C2 /* Main.storyboard in Resources */,
 				A0BE84A71A7E716B00D88E3B /* Bar1.png in Resources */,
+				A0BE84B51A7E992600D88E3B /* iOSIcon.png in Resources */,
 				A0BE84AE1A7E716B00D88E3B /* Circle3.png in Resources */,
 				A0BE84AC1A7E716B00D88E3B /* Circle1.png in Resources */,
 				A0BE84A81A7E716B00D88E3B /* Bar2.png in Resources */,
 				A0BE84B01A7E716B00D88E3B /* SendButton.png in Resources */,
 				A0BE84AD1A7E716B00D88E3B /* Circle2.png in Resources */,
 				A0BE84AF1A7E716B00D88E3B /* Gear.png in Resources */,
+				A0BE84B31A7E951B00D88E3B /* Default-568h@2x.png in Resources */,
 				A0BE84B11A7E716B00D88E3B /* Text.png in Resources */,
 				A0BE84A91A7E716B00D88E3B /* Bar3.png in Resources */,
 				A0BE84AA1A7E716B00D88E3B /* Bar4.png in Resources */,
@@ -461,9 +470,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ARCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -471,9 +484,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ARCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

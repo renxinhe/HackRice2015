@@ -16,12 +16,14 @@
     float startf, maxf, lastf;
     int startcount, startnotcount, lencount, lennotcount, lastcount, lastnotcount, minlen, datatype, maxlen, textlen;
     NSMutableArray *ar, *data;
+    double time, prevf;
 }
 
 -(void)enterBackground;
 -(void)enterForeground;
 -(void)clearAr;
 -(void)receivedMsg:(float)freq;
+-(void)didFinish;
 
 @property(nonatomic, strong) FFTAnalyzer *analyzer;
 @property(nonatomic, weak) IBOutlet UIImageView *circle1;
@@ -31,6 +33,10 @@
 @property(nonatomic, weak) IBOutlet UIImageView *bar2;
 @property(nonatomic, weak) IBOutlet UIImageView *bar3;
 @property(nonatomic, weak) IBOutlet UIImageView *bar4;
+@property(nonatomic, weak) IBOutlet UIImageView *picture;
+@property(nonatomic, weak) IBOutlet UIButton *btn;
+
+-(IBAction)close:(id)sender;
 
 @end
 
