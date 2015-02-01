@@ -31,7 +31,11 @@
     //NSLog(@"enter Fore");
 }
 #define MAXLEN 500
-#define MINLEN 10
+#define MINLEN 7
+#define BITS 16
+#define TEXT 4
+#define LINK 7
+#define PIC 10
 
 static inline bool eq(double a, double b){
     return fabs(a-b) < 10;
@@ -61,6 +65,7 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
                 startf = f;
                 startcount = ct;
                 startnotcount = 0;
+                NSLog(@"Start %.2f", startf);
             }
         }
     } else if(!foundlen) {
@@ -72,7 +77,7 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
             }else{
                 startcount++;
             }
-            if( startnotcount > 2 * startcount){
+            if( startnotcount > 1.5 * startcount){
                 [self clearAr];
             }
             if( ct >= MINLEN - 1) {
@@ -80,6 +85,7 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
                 maxf = f;
                 lencount = ct;
                 lennotcount = 0;
+                NSLog(@"End %.2f", maxf);
             }
         }
     }else if(!startmsg){
@@ -100,10 +106,11 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
                 lastcount = ct;
                 lastnotcount = 0;
                 minlen = (int)(lencount * 0.4);
+                maxlen = (int)(lencount * 0.75);
             }
         }
     }else{
-        if (ar.count > MINLEN) {
+        if (ar.count > minlen) {
             int ct = 0;
             float f = getLastFreq(ar, &ct, lastf, minlen);
             if(eq(freq, lastf)){
@@ -111,6 +118,11 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
             }else{
                 lastnotcount++;
             }
+            /*if(lastcount >= maxlen){
+                [self receivedMsg:lastf];
+                lastcount = (int)(lencount * 0.3)+1;
+                lastnotcount = 0;
+            }*/
             if(lastnotcount > 2 * lastcount) {
                 [self receivedMsg:lastf];
                 [self clearAr];
@@ -124,17 +136,49 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
         }
     }
     //NSLog(@"%@ %.2f", ar, freq);
-    NSLog(@"%.2f %.2f %d L: %d %d  S: %d %d", startf, maxf, minlen, lencount, lennotcount, startcount, startnotcount);
+    //NSLog(@"%.2f %.2f %d L: %d %d  S: %d %d", startf, maxf, minlen, lencount, lennotcount, startcount, startnotcount);
     while(ar.count > MAXLEN) {
         [ar removeObjectAtIndex:0];
     }
 }
 -(void)receivedMsg:(float)freq{
-    NSLog(@"!!!! %.2f", freq);
+    double minn = 1e99;
+    int best = -1;
+    double diff = (maxf - startf) / (BITS - 1);
+    for(int i = 0; i<BITS; i++) {
+        double x = startf + diff * i;
+        double d = abs(x - freq);
+        if( d < minn) {
+            minn = d;
+            best = i;
+        }
+    }
+    NSLog(@"%.2f %.2f %d", freq, startf + diff * best, best);
+    if(data.count == 0) {
+        if( best != 0 ){
+            [self clearAr];
+            return;
+        }
+    }
+    if( data.count == 1) {
+        int types[3] = {TEXT, LINK, PIC};
+        int minn = 99999, min = -1;
+        for(int i = 0; i<3; i++){
+            int d = abs(types[i] - best);
+            if( d < minn) {
+                minn = d;
+                min = types[i];
+            }
+        }
+        datatype = min;
+        NSLog(@"%d", datatype);
+    }
+    [data addObject:[NSNumber numberWithInt:best]];
 }
 
 -(void)clearAr{
     ar = [NSMutableArray array];
+    data = [NSMutableArray array];
     started = false;
     foundlen = false;
     startmsg = false;
@@ -147,6 +191,8 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
     lastcount = 0;
     lastnotcount = 0;
     lastf = 0.0;
+    datatype = 0;
+    maxlen = 0.0;
 }
 
 - (void)didReceiveMemoryWarning

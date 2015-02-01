@@ -13,9 +13,9 @@
 
 @interface ViewController : UIViewController<FFTAnalyzerDelegate>{
     bool started, foundlen, startmsg;
-    float startf, maxf, lastf;
-    int startcount, startnotcount, lencount, lennotcount, lastcount, lastnotcount, minlen;
-    NSMutableArray *ar;
+    float startf, maxf, lastf, maxlen;
+    int startcount, startnotcount, lencount, lennotcount, lastcount, lastnotcount, minlen, datatype;
+    NSMutableArray *ar, *data;
 }
 
 -(void)enterBackground;
