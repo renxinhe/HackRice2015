@@ -1,0 +1,11 @@
+import java.io.File;
+
+import com.musicg.*;
+import com.musicg.wave.Wave;
+
+public class WaveTester {
+	public static void main(String[] args) throws Exception {
+		Wave wav1 = new Wave("1.wav");
+		System.out.println(wav1);
+	}
+}

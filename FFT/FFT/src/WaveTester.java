@@ -1,4 +1,30 @@
+import java.io.File;
+import java.util.Arrays;
+
+import com.musicg.*;
+import com.musicg.graphic.GraphicRender;
+import com.musicg.wave.Wave;
+import com.musicg.wave.extension.Spectrogram;
 
 public class WaveTester {
-
+	public static void main(String[] args) throws Exception {
+		Wave wav1 = new Wave("440.wav");
+		System.out.println(Arrays.toString(wav1.getFingerprint()));
+		
+		System.out.println(Arrays.toString(wav1.getSampleAmplitudes()));
+		
+		
+		// Graphic render
+		GraphicRender render=new GraphicRender();
+		//render.setHorizontalMarker(1);
+		//render.setVerticalMarker(1);
+		render.renderWaveform(wav1, "./waveform.jpg");
+		                
+		// change the amplitude representation
+//		float timeStep=0.1F;
+//		render.renderWaveform(wav1,timeStep,"./waveform2.jpg");
+		
+//		render.renderSpectrogram(wav1.getSpectrogram(), "./spectro1.jpg");
+		
+	}
 }

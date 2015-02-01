@@ -1,0 +1,7 @@
+import com.musicg.*;
+
+public class WaveTester {
+	public static void main(String[] args) throws Exception {
+		
+	}
+}
