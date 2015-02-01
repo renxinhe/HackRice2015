@@ -11,10 +11,17 @@
 
 @class FFTAnalyzer;
 
-@interface ViewController : UIViewController<FFTAnalyzerDelegate>
+@interface ViewController : UIViewController<FFTAnalyzerDelegate>{
+    bool started, foundlen, startmsg;
+    float startf, maxf, lastf;
+    int startcount, startnotcount, lencount, lennotcount, lastcount, lastnotcount, minlen;
+    NSMutableArray *ar;
+}
 
 -(void)enterBackground;
 -(void)enterForeground;
+-(void)clearAr;
+-(void)receivedMsg:(float)freq;
 
 @property(nonatomic, strong) FFTAnalyzer *analyzer;
 
