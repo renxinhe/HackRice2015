@@ -7,9 +7,61 @@ def note(freq, len, amp=1, rate=44100):
 	data = sin(2*pi*freq*t)*amp
 	return data.astype(int16) # two byte integers
 
-# print type(note(440, 1, amp=10000))
+bits = 16
+low, high = 900, 1600
+diff = (high - low) / (bits - 1)
+duration = 0.25
+TEXT = 4
+URL = 7
+PIC = 10
+amp = 10000
 
-tones = [] 
+def send_data(data, name, typee):
+	tones = [] 
+	tones.append(note(low, duration * 4, amp))
+	tones.append(note(high, duration * 4, amp))
+	tones.append(note(low, duration, amp))
+	tones.append(note(low + typee * diff, duration, amp))
+	for i in data:
+		tones.append(note(low + i * diff, duration, amp))
+	write(name + ".wav", 44100,concatenate(tones,axis=1)) # writing the sound to a file
+
+def send_text(string, name):
+	str_length = len(string)
+	data = [str_length & 0xF, (str_length & 0xF0) >> 4]
+	for ch in string:
+		data += [ord(ch) & 0xF, (ord(ch) & 0xF0) >> 4]
+	print data
+	# check_adjacent(data)
+	send_data(data, name, TEXT)
+
+def send_url(string, name):
+	str_length = len(string)
+	data = []
+	for ch in string:
+		data += [int(ch, 16)]
+	print data
+	# check_adjacent(data)
+	send_data(data, name, URL)
+
+
+def send_pic(string, name):
+	str_length = len(string)
+	data = []
+	for ch in string:
+		data += [int(ch, 16)]
+	print data
+	# check_adjacent(data)
+	send_data(data, name, PIC)
+
+def check_adjacent(lst):
+	cache = lst[0];
+	for i in lst[1:]:
+		if i == cache:
+			raise ValueError("Adjacent bits not allowed in beta.")
+		else:
+			cache = i
+
 
 # tones.append(note(440.000,1,amp=10000))
 # tones.append(note(493.883,1,amp=10000))
@@ -20,9 +72,13 @@ tones = []
 # tones.append(note(783.991,1,amp=10000))
 # tones.append(note(880.000,1,amp=10000))
 
-for i in range(50):
-	tones.append(note(randint(12, 30)*50, 0.5, amp=10000))
+# for i in range(16):
+# 	write(str(i) + ".wav", 44100, note(low + i * diff, duration, amp))
 
 # print tones
 
-write('440hzAtone.wav',44100,concatenate(tones,axis=1)) # writing the sound to a file
+# send_data([8, 3 ,2, 3 ,1 ,0, 8, 9, 2, 0, 9, 8], "all", text)
+# send_data([i for i in range(0, 16)]+[8, 3 ,2, 8, 3, 1, 8, 8, 8, 8, 0, 8, 8, 8, 9, 2, 0, 9, 8, 8, 8], "all", text)
+send_pic("279c231", "doge")
+
+
