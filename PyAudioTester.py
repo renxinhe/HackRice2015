@@ -72,13 +72,16 @@ def check_adjacent(lst):
 # tones.append(note(783.991,1,amp=10000))
 # tones.append(note(880.000,1,amp=10000))
 
+# temp = []
 # for i in range(16):
-# 	write(str(i) + ".wav", 44100, note(low + i * diff, duration, amp))
+# 	temp +=  [note(low + i * diff, duration, amp)]
+# write("tones.wav", 44100, concatenate(temp,axis=1))
 
 # print tones
 
-# send_data([8, 3 ,2, 3 ,1 ,0, 8, 9, 2, 0, 9, 8], "all", text)
-# send_data([i for i in range(0, 16)]+[8, 3 ,2, 8, 3, 1, 8, 8, 8, 8, 0, 8, 8, 8, 9, 2, 0, 9, 8, 8, 8], "all", text)
-send_pic("279c231", "doge")
+# send_data([8, 3 ,2, 3 ,1 ,0, 8, 9, 2, 0, 9, 8], "all", TEXT)
+# send_data([i for i in range(0, 16)]+[8, 3 ,2, 8, 3, 1, 8, 8, 8, 8, 0, 8, 8, 8, 9, 2, 0, 9, 8, 8, 8], "all", TEXT)
+send_text("Hello World! :)", "helloworld")
+# send_pic("279c231", "doge")
 
 
