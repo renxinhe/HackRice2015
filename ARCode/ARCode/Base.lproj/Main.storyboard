@@ -34,6 +34,9 @@
                                 <state key="normal" image="SendButton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="send:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAb-1n-0tU"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle3.png" translatesAutoresizingMaskIntoConstraints="NO" id="d0m-sE-V7d">
                                 <rect key="frame" x="63" y="209" width="250" height="250"/>
@@ -57,14 +60,19 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9Y-nw-qRH">
-                                <rect key="frame" x="0.0" y="617" width="50" height="50"/>
+                                <rect key="frame" x="3" y="612" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8wX-db-dgH"/>
                                     <constraint firstAttribute="width" constant="50" id="g2L-pB-3DO"/>
                                 </constraints>
-                                <state key="normal" image="Gear.png">
+                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.14901960784313725" green="0.42745098039215684" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t8f-52-gBh"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BarBase.png" translatesAutoresizingMaskIntoConstraints="NO" id="tZM-Bf-Jzk">
                                 <rect key="frame" x="138" y="622" width="100" height="40"/>
@@ -136,7 +144,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="PZr-ek-VrP" secondAttribute="trailing" constant="-29" id="XlF-OB-bJo"/>
                             <constraint firstAttribute="centerX" secondItem="roJ-No-OeI" secondAttribute="centerX" id="Xmu-A2-NsQ"/>
                             <constraint firstAttribute="centerX" secondItem="NB8-BQ-drl" secondAttribute="centerX" constant="33" id="Y3G-Nb-XWR"/>
-                            <constraint firstItem="u9Y-nw-qRH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Yh9-fD-WNS"/>
+                            <constraint firstItem="u9Y-nw-qRH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-13" id="Yh9-fD-WNS"/>
                             <constraint firstItem="dqj-mt-IOG" firstAttribute="leading" secondItem="fYf-L1-eAc" secondAttribute="trailing" constant="1" id="cRE-Oo-mIE"/>
                             <constraint firstItem="tZM-Bf-Jzk" firstAttribute="top" secondItem="Ida-dC-iJY" secondAttribute="bottom" constant="-37" id="cSs-HQ-naL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PZr-ek-VrP" secondAttribute="bottom" id="eCh-uS-M4d"/>
@@ -148,7 +156,7 @@
                             <constraint firstItem="tJb-Gm-Cbr" firstAttribute="leading" secondItem="dqj-mt-IOG" secondAttribute="trailing" constant="2" id="l2o-Z8-1Pl"/>
                             <constraint firstAttribute="centerY" secondItem="uI3-RL-33z" secondAttribute="centerY" constant="-1" id="nYG-2P-gmG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QAb-7g-7h4" secondAttribute="bottom" constant="53" id="qV0-n4-j7t"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u9Y-nw-qRH" secondAttribute="bottom" id="rZI-7U-E0n"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u9Y-nw-qRH" secondAttribute="bottom" constant="5" id="rZI-7U-E0n"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -183,7 +191,6 @@
         <image name="Circle1.png" width="361" height="359"/>
         <image name="Circle2.png" width="507" height="508"/>
         <image name="Circle3.png" width="686" height="686"/>
-        <image name="Gear.png" width="119" height="122"/>
         <image name="SendButton.png" width="278" height="250"/>
         <image name="Text.png" width="692" height="233"/>
     </resources>

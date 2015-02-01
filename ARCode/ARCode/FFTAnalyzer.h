@@ -26,5 +26,7 @@
 -(id)initWithDelegate:(id<FFTAnalyzerDelegate>)del;
 -(void)initMomuAudio;
 -(void)setup;
+-(void)pause;
+-(void)start;
 
 @end
