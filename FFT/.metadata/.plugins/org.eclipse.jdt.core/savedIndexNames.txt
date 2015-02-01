@@ -7,7 +7,6 @@ INDEX VERSION 1.127+/Users/Jim/Documents/UC_Berkeley/Spring_2015/Hackathon_Sprin
 292086710.index
 1384487945.index
 1692234390.index
-1730669672.index
 3266567714.index
 1917121814.index
 2345498119.index
