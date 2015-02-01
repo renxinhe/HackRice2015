@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.jtransforms.fft.DoubleFFT_1D"/>
+<fullyQualifiedTypeName name="com.musicg.wave.Wave"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="com.musicg.wave.extension.Spectrogram"/>
+<fullyQualifiedTypeName name="com.musicg.graphic.GraphicRender"/>
+<fullyQualifiedTypeName name="org.jtransforms.utils.IOUtils"/>
+<fullyQualifiedTypeName name="javax.sound.sampled.AudioInputStream"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
+<fullyQualifiedTypeName name="javax.sound.sampled.LineUnavailableException"/>
+<fullyQualifiedTypeName name="javax.sound.sampled.AudioSystem"/>
+<fullyQualifiedTypeName name="javax.sound.sampled.AudioFormat"/>
+</qualifiedTypeNameHistroy>
