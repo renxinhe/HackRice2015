@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A0E2E1131A7D9222007C85C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1121A7D9222007C85C2 /* main.m */; };
 		A0E2E1161A7D9222007C85C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1151A7D9222007C85C2 /* AppDelegate.m */; };
-		A0E2E1191A7D9222007C85C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1181A7D9222007C85C2 /* ViewController.m */; };
+		A0E2E1191A7D9222007C85C2 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1181A7D9222007C85C2 /* ViewController.mm */; };
 		A0E2E11C1A7D9222007C85C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E2E11A1A7D9222007C85C2 /* Main.storyboard */; };
 		A0E2E11E1A7D9222007C85C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E2E11D1A7D9222007C85C2 /* Images.xcassets */; };
 		A0E2E1211A7D9222007C85C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E2E11F1A7D9222007C85C2 /* LaunchScreen.xib */; };
@@ -23,6 +23,7 @@
 		A0E2E1431A7DC605007C85C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E2E1421A7DC605007C85C2 /* UIKit.framework */; };
 		A0E2E14A1A7DC679007C85C2 /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1471A7DC679007C85C2 /* mo_audio.mm */; };
 		A0E2E14B1A7DC679007C85C2 /* mo_gfx.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1491A7DC679007C85C2 /* mo_gfx.mm */; };
+		A0E2E14E1A7DC6C9007C85C2 /* FFTHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E14D1A7DC6C9007C85C2 /* FFTHelper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,7 @@
 		A0E2E1141A7D9222007C85C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0E2E1151A7D9222007C85C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A0E2E1171A7D9222007C85C2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A0E2E1181A7D9222007C85C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A0E2E1181A7D9222007C85C2 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		A0E2E11B1A7D9222007C85C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0E2E11D1A7D9222007C85C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0E2E1201A7D9222007C85C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -61,6 +62,8 @@
 		A0E2E1471A7DC679007C85C2 /* mo_audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mo_audio.mm; sourceTree = "<group>"; };
 		A0E2E1481A7DC679007C85C2 /* mo_gfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_gfx.h; sourceTree = "<group>"; };
 		A0E2E1491A7DC679007C85C2 /* mo_gfx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mo_gfx.mm; sourceTree = "<group>"; };
+		A0E2E14C1A7DC6C9007C85C2 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
+		A0E2E14D1A7DC6C9007C85C2 /* FFTHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFTHelper.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +121,9 @@
 				A0E2E1141A7D9222007C85C2 /* AppDelegate.h */,
 				A0E2E1151A7D9222007C85C2 /* AppDelegate.m */,
 				A0E2E1171A7D9222007C85C2 /* ViewController.h */,
-				A0E2E1181A7D9222007C85C2 /* ViewController.m */,
+				A0E2E1181A7D9222007C85C2 /* ViewController.mm */,
+				A0E2E14C1A7DC6C9007C85C2 /* FFTHelper.h */,
+				A0E2E14D1A7DC6C9007C85C2 /* FFTHelper.mm */,
 				A0E2E11A1A7D9222007C85C2 /* Main.storyboard */,
 				A0E2E11D1A7D9222007C85C2 /* Images.xcassets */,
 				A0E2E11F1A7D9222007C85C2 /* LaunchScreen.xib */,
@@ -267,9 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E2E14E1A7DC6C9007C85C2 /* FFTHelper.mm in Sources */,
 				A0E2E14B1A7DC679007C85C2 /* mo_gfx.mm in Sources */,
 				A0E2E14A1A7DC679007C85C2 /* mo_audio.mm in Sources */,
-				A0E2E1191A7D9222007C85C2 /* ViewController.m in Sources */,
+				A0E2E1191A7D9222007C85C2 /* ViewController.mm in Sources */,
 				A0E2E1161A7D9222007C85C2 /* AppDelegate.m in Sources */,
 				A0E2E1131A7D9222007C85C2 /* main.m in Sources */,
 			);
