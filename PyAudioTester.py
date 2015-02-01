@@ -81,7 +81,14 @@ def check_adjacent(lst):
 
 # send_data([8, 3 ,2, 3 ,1 ,0, 8, 9, 2, 0, 9, 8], "all", TEXT)
 # send_data([i for i in range(0, 16)]+[8, 3 ,2, 8, 3, 1, 8, 8, 8, 8, 0, 8, 8, 8, 9, 2, 0, 9, 8, 8, 8], "all", TEXT)
-send_text("Hello World! :)", "helloworld")
+# send_text("Hello World! :)", "helloworld")
 # send_pic("279c231", "doge")
+
+randList = [0x0, 0x1]
+for i in range(32):
+	randList += [randint(0, 15)]
+# check_adjacent(randList)
+send_data(randList, 'random', TEXT)
+
 
 
