@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FFTAnalyzerDelegate.h"
 
-@interface ViewController : UIViewController
+@class FFTAnalyzer;
 
+@interface ViewController : UIViewController<FFTAnalyzerDelegate>
+
+-(void)enterBackground;
+-(void)enterForeground;
+
+@property(nonatomic, strong) FFTAnalyzer *analyzer;
 
 @end
 

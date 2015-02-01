@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 wynd. All rights reserved.
 //
 
+#import "ViewController.h"
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

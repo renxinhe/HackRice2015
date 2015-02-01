@@ -1,18 +1,18 @@
 /*----------------------------------------------------------------------------
-  MoMu: A Mobile Music Toolkit
-  Copyright (c) 2010 Nicholas J. Bryan, Jorge Herrera, Jieun Oh, and Ge Wang
-  All rights reserved.
-    http://momu.stanford.edu/toolkit/
+ MoMu: A Mobile Music Toolkit
+ Copyright (c) 2010 Nicholas J. Bryan, Jorge Herrera, Jieun Oh, and Ge Wang
+ All rights reserved.
+ http://momu.stanford.edu/toolkit/
  
-  Mobile Music Research @ CCRMA
-  Music, Computing, Design Group
-  Stanford University
-    http://momu.stanford.edu/
-    http://ccrma.stanford.edu/groups/mcd/
+ Mobile Music Research @ CCRMA
+ Music, Computing, Design Group
+ Stanford University
+ http://momu.stanford.edu/
+ http://ccrma.stanford.edu/groups/mcd/
  
  MoMu is distributed under the following BSD style open source license:
  
- Permission is hereby granted, free of charge, to any person obtaining a 
+ Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the
  "Software"), to deal in the Software without restriction, including
  without limitation the rights to use, copy, modify, merge, publish,
@@ -21,9 +21,9 @@
  the following conditions:
  
  The authors encourage users of MoMu to include this copyright notice,
- and to let us know that you are using MoMu. Any person wishing to 
- distribute modifications to the Software is encouraged to send the 
- modifications to the original authors so that they can be incorporated 
+ and to let us know that you are using MoMu. Any person wishing to
+ distribute modifications to the Software is encouraged to send the
+ modifications to the original authors so that they can be incorporated
  into the canonical version.
  
  The Software is provided "as is", WITHOUT ANY WARRANTY, express or implied,
@@ -31,7 +31,7 @@
  FOR A PARTICULAR PURPOSE and NONINFRINGEMENT.  In no event shall the authors
  or copyright holders by liable for any claim, damages, or other liability,
  whether in an actino of a contract, tort or otherwise, arising from, out of
- or in connection with the Software or the use or other dealings in the 
+ or in connection with the Software or the use or other dealings in the
  software.
  -----------------------------------------------------------------------------*/
 //-----------------------------------------------------------------------------
@@ -111,7 +111,7 @@ class MoAudio
 {
 public:
     static bool init( Float64 srate, UInt32 frameSize, UInt32 numChannels, bool enableBuiltInAEC );
-//    static bool init( Float64 srate, UInt32 frameSize, UInt32 numChannels );
+    //    static bool init( Float64 srate, UInt32 frameSize, UInt32 numChannels );
     static bool start( MoCallback callback, void * bindle );
     static void stop();
     static void shutdown();
@@ -120,7 +120,7 @@ public:
     
 public: // sketchy public
     static void checkInput();
-
+    
 protected:
     static bool initOut();
     static bool initIn();
@@ -128,7 +128,7 @@ protected:
 protected:
     static bool m_hasInit;
     static bool m_isRunning;
-
+    
 public: // ge: making this public was a hack
     static MoAudioUnitInfo * m_info;
     static MoCallback m_callback;

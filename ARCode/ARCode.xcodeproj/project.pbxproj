@@ -24,6 +24,7 @@
 		A0E2E14A1A7DC679007C85C2 /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1471A7DC679007C85C2 /* mo_audio.mm */; };
 		A0E2E14B1A7DC679007C85C2 /* mo_gfx.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1491A7DC679007C85C2 /* mo_gfx.mm */; };
 		A0E2E14E1A7DC6C9007C85C2 /* FFTHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E14D1A7DC6C9007C85C2 /* FFTHelper.mm */; };
+		A0E2E1511A7DCA5C007C85C2 /* FFTAnalyzer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1501A7DCA5C007C85C2 /* FFTAnalyzer.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,9 @@
 		A0E2E1491A7DC679007C85C2 /* mo_gfx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mo_gfx.mm; sourceTree = "<group>"; };
 		A0E2E14C1A7DC6C9007C85C2 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		A0E2E14D1A7DC6C9007C85C2 /* FFTHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFTHelper.mm; sourceTree = "<group>"; };
+		A0E2E14F1A7DCA5C007C85C2 /* FFTAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTAnalyzer.h; sourceTree = "<group>"; };
+		A0E2E1501A7DCA5C007C85C2 /* FFTAnalyzer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFTAnalyzer.mm; sourceTree = "<group>"; };
+		A0E2E1521A7DCB8F007C85C2 /* FFTAnalyzerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFTAnalyzerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,9 @@
 				A0E2E1151A7D9222007C85C2 /* AppDelegate.m */,
 				A0E2E1171A7D9222007C85C2 /* ViewController.h */,
 				A0E2E1181A7D9222007C85C2 /* ViewController.mm */,
+				A0E2E14F1A7DCA5C007C85C2 /* FFTAnalyzer.h */,
+				A0E2E1521A7DCB8F007C85C2 /* FFTAnalyzerDelegate.h */,
+				A0E2E1501A7DCA5C007C85C2 /* FFTAnalyzer.mm */,
 				A0E2E14C1A7DC6C9007C85C2 /* FFTHelper.h */,
 				A0E2E14D1A7DC6C9007C85C2 /* FFTHelper.mm */,
 				A0E2E11A1A7D9222007C85C2 /* Main.storyboard */,
@@ -273,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E2E14E1A7DC6C9007C85C2 /* FFTHelper.mm in Sources */,
+				A0E2E1511A7DCA5C007C85C2 /* FFTAnalyzer.mm in Sources */,
 				A0E2E14B1A7DC679007C85C2 /* mo_gfx.mm in Sources */,
 				A0E2E14A1A7DC679007C85C2 /* mo_audio.mm in Sources */,
 				A0E2E1191A7D9222007C85C2 /* ViewController.mm in Sources */,
