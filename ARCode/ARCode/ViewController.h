@@ -14,7 +14,7 @@
 @interface ViewController : UIViewController<FFTAnalyzerDelegate>{
     bool started, foundlen, startmsg;
     float startf, maxf, lastf;
-    int startcount, startnotcount, lencount, lennotcount, lastcount, lastnotcount, minlen, datatype, maxlen;
+    int startcount, startnotcount, lencount, lennotcount, lastcount, lastnotcount, minlen, datatype, maxlen, textlen;
     NSMutableArray *ar, *data;
 }
 
@@ -24,6 +24,13 @@
 -(void)receivedMsg:(float)freq;
 
 @property(nonatomic, strong) FFTAnalyzer *analyzer;
+@property(nonatomic, weak) IBOutlet UIImageView *circle1;
+@property(nonatomic, weak) IBOutlet UIImageView *circle2;
+@property(nonatomic, weak) IBOutlet UIImageView *circle3;
+@property(nonatomic, weak) IBOutlet UIImageView *bar1;
+@property(nonatomic, weak) IBOutlet UIImageView *bar2;
+@property(nonatomic, weak) IBOutlet UIImageView *bar3;
+@property(nonatomic, weak) IBOutlet UIImageView *bar4;
 
 @end
 

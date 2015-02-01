@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0BE84A71A7E716B00D88E3B /* Bar1.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE849C1A7E716B00D88E3B /* Bar1.png */; };
+		A0BE84A81A7E716B00D88E3B /* Bar2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE849D1A7E716B00D88E3B /* Bar2.png */; };
+		A0BE84A91A7E716B00D88E3B /* Bar3.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE849E1A7E716B00D88E3B /* Bar3.png */; };
+		A0BE84AA1A7E716B00D88E3B /* Bar4.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE849F1A7E716B00D88E3B /* Bar4.png */; };
+		A0BE84AB1A7E716B00D88E3B /* BarBase.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A01A7E716B00D88E3B /* BarBase.png */; };
+		A0BE84AC1A7E716B00D88E3B /* Circle1.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A11A7E716B00D88E3B /* Circle1.png */; };
+		A0BE84AD1A7E716B00D88E3B /* Circle2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A21A7E716B00D88E3B /* Circle2.png */; };
+		A0BE84AE1A7E716B00D88E3B /* Circle3.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A31A7E716B00D88E3B /* Circle3.png */; };
+		A0BE84AF1A7E716B00D88E3B /* Gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A41A7E716B00D88E3B /* Gear.png */; };
+		A0BE84B01A7E716B00D88E3B /* SendButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A51A7E716B00D88E3B /* SendButton.png */; };
+		A0BE84B11A7E716B00D88E3B /* Text.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A61A7E716B00D88E3B /* Text.png */; };
 		A0E2E1131A7D9222007C85C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1121A7D9222007C85C2 /* main.m */; };
 		A0E2E1161A7D9222007C85C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1151A7D9222007C85C2 /* AppDelegate.m */; };
 		A0E2E1191A7D9222007C85C2 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1181A7D9222007C85C2 /* ViewController.mm */; };
@@ -38,6 +49,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A0BE849C1A7E716B00D88E3B /* Bar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bar1.png; sourceTree = "<group>"; };
+		A0BE849D1A7E716B00D88E3B /* Bar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bar2.png; sourceTree = "<group>"; };
+		A0BE849E1A7E716B00D88E3B /* Bar3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bar3.png; sourceTree = "<group>"; };
+		A0BE849F1A7E716B00D88E3B /* Bar4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bar4.png; sourceTree = "<group>"; };
+		A0BE84A01A7E716B00D88E3B /* BarBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BarBase.png; sourceTree = "<group>"; };
+		A0BE84A11A7E716B00D88E3B /* Circle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Circle1.png; sourceTree = "<group>"; };
+		A0BE84A21A7E716B00D88E3B /* Circle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Circle2.png; sourceTree = "<group>"; };
+		A0BE84A31A7E716B00D88E3B /* Circle3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Circle3.png; sourceTree = "<group>"; };
+		A0BE84A41A7E716B00D88E3B /* Gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gear.png; sourceTree = "<group>"; };
+		A0BE84A51A7E716B00D88E3B /* SendButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SendButton.png; sourceTree = "<group>"; };
+		A0BE84A61A7E716B00D88E3B /* Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Text.png; sourceTree = "<group>"; };
 		A0E2E10D1A7D9222007C85C2 /* ARCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E2E1111A7D9222007C85C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E2E1121A7D9222007C85C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +117,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0BE849B1A7E713900D88E3B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A0BE849C1A7E716B00D88E3B /* Bar1.png */,
+				A0BE849D1A7E716B00D88E3B /* Bar2.png */,
+				A0BE849E1A7E716B00D88E3B /* Bar3.png */,
+				A0BE849F1A7E716B00D88E3B /* Bar4.png */,
+				A0BE84A01A7E716B00D88E3B /* BarBase.png */,
+				A0BE84A11A7E716B00D88E3B /* Circle1.png */,
+				A0BE84A21A7E716B00D88E3B /* Circle2.png */,
+				A0BE84A31A7E716B00D88E3B /* Circle3.png */,
+				A0BE84A41A7E716B00D88E3B /* Gear.png */,
+				A0BE84A51A7E716B00D88E3B /* SendButton.png */,
+				A0BE84A61A7E716B00D88E3B /* Text.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		A0E2E1041A7D9222007C85C2 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +174,7 @@
 				A0E2E11A1A7D9222007C85C2 /* Main.storyboard */,
 				A0E2E11D1A7D9222007C85C2 /* Images.xcassets */,
 				A0E2E11F1A7D9222007C85C2 /* LaunchScreen.xib */,
+				A0BE849B1A7E713900D88E3B /* Images */,
 				A0E2E1101A7D9222007C85C2 /* Supporting Files */,
 			);
 			path = ARCode;
@@ -260,7 +301,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E2E11C1A7D9222007C85C2 /* Main.storyboard in Resources */,
+				A0BE84A71A7E716B00D88E3B /* Bar1.png in Resources */,
+				A0BE84AE1A7E716B00D88E3B /* Circle3.png in Resources */,
+				A0BE84AC1A7E716B00D88E3B /* Circle1.png in Resources */,
+				A0BE84A81A7E716B00D88E3B /* Bar2.png in Resources */,
+				A0BE84B01A7E716B00D88E3B /* SendButton.png in Resources */,
+				A0BE84AD1A7E716B00D88E3B /* Circle2.png in Resources */,
+				A0BE84AF1A7E716B00D88E3B /* Gear.png in Resources */,
+				A0BE84B11A7E716B00D88E3B /* Text.png in Resources */,
+				A0BE84A91A7E716B00D88E3B /* Bar3.png in Resources */,
+				A0BE84AA1A7E716B00D88E3B /* Bar4.png in Resources */,
 				A0E2E1211A7D9222007C85C2 /* LaunchScreen.xib in Resources */,
+				A0BE84AB1A7E716B00D88E3B /* BarBase.png in Resources */,
 				A0E2E11E1A7D9222007C85C2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +530,7 @@
 				A0E2E1321A7D9222007C85C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0E2E1331A7D9222007C85C2 /* Build configuration list for PBXNativeTarget "ARCodeTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +539,7 @@
 				A0E2E1351A7D9222007C85C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -55,7 +55,7 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
 
 
 -(void)didReceiveFreq:(float)freq{
-    NSLog(@"WTF: %.2f", freq);
+    NSLog(@"WTF: %.2f %d", freq, ar.count);
     [ar addObject:[NSNumber numberWithFloat:freq]];
     if(!started) {
         if (ar.count > MINLEN) {
@@ -122,10 +122,10 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
             }
             if(lastcount >= maxlen){
                 [self receivedMsg:lastf];
-                lastcount = (int)(lencount * 0.25/2);
+                lastcount = 1;//(int)(lencount * 0.25/2);
                 lastnotcount = 0;
             }
-            if(lastnotcount > 2 * lastcount) {
+            if((lastnotcount > 2 * lastcount  && lastcount > minlen * 1.5) || lastnotcount > maxlen) {
                 [self receivedMsg:lastf];
                 [self clearAr];
             }
@@ -180,6 +180,23 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
         NSLog(@"%d", datatype);
     }
     [data addObject:[NSNumber numberWithInt:best]];
+    if( datatype == TEXT) {
+        if( data.count == 4) {
+            long a = [[data objectAtIndex:2] integerValue];
+            long b = [[data objectAtIndex:3] integerValue];
+            textlen = (int)(a | (b<<4));
+            NSLog(@"len: %d", textlen);
+        }
+        if( ((int)data.count - 4) == textlen * 2) {
+            NSMutableString *str = [[NSMutableString alloc] init];
+            for(int i = 4; i < (int)data.count; i+=2){
+                long a = [[data objectAtIndex:i] integerValue];
+                long b = [[data objectAtIndex:i+1] integerValue];
+                [str appendString:[NSString stringWithFormat:@"%c", (int)(a | (b<<4))]];
+            }
+            NSLog(@"%@",str);
+        }
+    }
 }
 
 -(void)clearAr{

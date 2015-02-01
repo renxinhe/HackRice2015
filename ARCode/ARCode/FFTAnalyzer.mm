@@ -127,10 +127,9 @@ void AudioCallback( Float32 * buffer, UInt32 frameSize, void * userData )
             //labelToUpdate.text = [NSString stringWithFormat:@"%0.3f HZ",maxHZ];
             
         //});
-        [delegate didReceiveFreq:maxHZ];
-        
         
         emptyAccumulator(); //empty the accumulator when finished
+        [delegate didReceiveFreq:maxHZ];
     }
     memset(buffer, 0, sizeof(Float32)*frameSize*NUMCHANNELS);
 }
