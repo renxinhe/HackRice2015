@@ -20,11 +20,12 @@
 		A0BE84B11A7E716B00D88E3B /* Text.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84A61A7E716B00D88E3B /* Text.png */; };
 		A0BE84B31A7E951B00D88E3B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84B21A7E951B00D88E3B /* Default-568h@2x.png */; };
 		A0BE84B51A7E992600D88E3B /* iOSIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84B41A7E992600D88E3B /* iOSIcon.png */; };
-		A0BE84BB1A7E9DB000D88E3B /* cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84B61A7E9DB000D88E3B /* cat.wav */; };
-		A0BE84BC1A7E9DB000D88E3B /* doge.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84B71A7E9DB000D88E3B /* doge.wav */; };
-		A0BE84BD1A7E9DB000D88E3B /* google.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84B81A7E9DB000D88E3B /* google.wav */; };
-		A0BE84BE1A7E9DB000D88E3B /* hackrice.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84B91A7E9DB000D88E3B /* hackrice.wav */; };
-		A0BE84BF1A7E9DB000D88E3B /* rickroll.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84BA1A7E9DB000D88E3B /* rickroll.wav */; };
+		A0BE84C51A7EAD0D00D88E3B /* google.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84C41A7EAD0D00D88E3B /* google.wav */; };
+		A0BE84C71A7EAE0600D88E3B /* helloworld.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84C61A7EAE0600D88E3B /* helloworld.wav */; };
+		A0BE84C91A7EAE8100D88E3B /* hackrice.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84C81A7EAE8100D88E3B /* hackrice.wav */; };
+		A0BE84CB1A7EAEB300D88E3B /* cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84CA1A7EAEB300D88E3B /* cat.wav */; };
+		A0BE84CD1A7EAF4900D88E3B /* doge.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84CC1A7EAF4900D88E3B /* doge.wav */; };
+		A0BE84CF1A7EB01200D88E3B /* rickroll.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0BE84CE1A7EB01200D88E3B /* rickroll.wav */; };
 		A0E2E1131A7D9222007C85C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1121A7D9222007C85C2 /* main.m */; };
 		A0E2E1161A7D9222007C85C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1151A7D9222007C85C2 /* AppDelegate.m */; };
 		A0E2E1191A7D9222007C85C2 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E2E1181A7D9222007C85C2 /* ViewController.mm */; };
@@ -69,11 +70,12 @@
 		A0BE84A61A7E716B00D88E3B /* Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Text.png; sourceTree = "<group>"; };
 		A0BE84B21A7E951B00D88E3B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A0BE84B41A7E992600D88E3B /* iOSIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOSIcon.png; sourceTree = "<group>"; };
-		A0BE84B61A7E9DB000D88E3B /* cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cat.wav; sourceTree = "<group>"; };
-		A0BE84B71A7E9DB000D88E3B /* doge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = doge.wav; sourceTree = "<group>"; };
-		A0BE84B81A7E9DB000D88E3B /* google.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = google.wav; sourceTree = "<group>"; };
-		A0BE84B91A7E9DB000D88E3B /* hackrice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hackrice.wav; sourceTree = "<group>"; };
-		A0BE84BA1A7E9DB000D88E3B /* rickroll.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rickroll.wav; sourceTree = "<group>"; };
+		A0BE84C41A7EAD0D00D88E3B /* google.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = google.wav; sourceTree = "<group>"; };
+		A0BE84C61A7EAE0600D88E3B /* helloworld.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = helloworld.wav; sourceTree = "<group>"; };
+		A0BE84C81A7EAE8100D88E3B /* hackrice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hackrice.wav; sourceTree = "<group>"; };
+		A0BE84CA1A7EAEB300D88E3B /* cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cat.wav; sourceTree = "<group>"; };
+		A0BE84CC1A7EAF4900D88E3B /* doge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = doge.wav; sourceTree = "<group>"; };
+		A0BE84CE1A7EB01200D88E3B /* rickroll.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rickroll.wav; sourceTree = "<group>"; };
 		A0E2E10D1A7D9222007C85C2 /* ARCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E2E1111A7D9222007C85C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E2E1121A7D9222007C85C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -171,11 +173,12 @@
 		A0E2E10F1A7D9222007C85C2 /* ARCode */ = {
 			isa = PBXGroup;
 			children = (
-				A0BE84B61A7E9DB000D88E3B /* cat.wav */,
-				A0BE84B71A7E9DB000D88E3B /* doge.wav */,
-				A0BE84B81A7E9DB000D88E3B /* google.wav */,
-				A0BE84B91A7E9DB000D88E3B /* hackrice.wav */,
-				A0BE84BA1A7E9DB000D88E3B /* rickroll.wav */,
+				A0BE84C41A7EAD0D00D88E3B /* google.wav */,
+				A0BE84C61A7EAE0600D88E3B /* helloworld.wav */,
+				A0BE84C81A7EAE8100D88E3B /* hackrice.wav */,
+				A0BE84CA1A7EAEB300D88E3B /* cat.wav */,
+				A0BE84CC1A7EAF4900D88E3B /* doge.wav */,
+				A0BE84CE1A7EB01200D88E3B /* rickroll.wav */,
 				A0BE84B41A7E992600D88E3B /* iOSIcon.png */,
 				A0BE84B21A7E951B00D88E3B /* Default-568h@2x.png */,
 				A0E2E1451A7DC679007C85C2 /* mo_def.h */,
@@ -322,26 +325,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BE84C71A7EAE0600D88E3B /* helloworld.wav in Resources */,
 				A0E2E11C1A7D9222007C85C2 /* Main.storyboard in Resources */,
 				A0BE84A71A7E716B00D88E3B /* Bar1.png in Resources */,
+				A0BE84CB1A7EAEB300D88E3B /* cat.wav in Resources */,
 				A0BE84B51A7E992600D88E3B /* iOSIcon.png in Resources */,
 				A0BE84AE1A7E716B00D88E3B /* Circle3.png in Resources */,
 				A0BE84AC1A7E716B00D88E3B /* Circle1.png in Resources */,
 				A0BE84A81A7E716B00D88E3B /* Bar2.png in Resources */,
 				A0BE84B01A7E716B00D88E3B /* SendButton.png in Resources */,
 				A0BE84AD1A7E716B00D88E3B /* Circle2.png in Resources */,
+				A0BE84CF1A7EB01200D88E3B /* rickroll.wav in Resources */,
 				A0BE84AF1A7E716B00D88E3B /* Gear.png in Resources */,
 				A0BE84B31A7E951B00D88E3B /* Default-568h@2x.png in Resources */,
+				A0BE84CD1A7EAF4900D88E3B /* doge.wav in Resources */,
 				A0BE84B11A7E716B00D88E3B /* Text.png in Resources */,
-				A0BE84BD1A7E9DB000D88E3B /* google.wav in Resources */,
-				A0BE84BF1A7E9DB000D88E3B /* rickroll.wav in Resources */,
+				A0BE84C51A7EAD0D00D88E3B /* google.wav in Resources */,
+				A0BE84C91A7EAE8100D88E3B /* hackrice.wav in Resources */,
 				A0BE84A91A7E716B00D88E3B /* Bar3.png in Resources */,
 				A0BE84AA1A7E716B00D88E3B /* Bar4.png in Resources */,
 				A0E2E1211A7D9222007C85C2 /* LaunchScreen.xib in Resources */,
-				A0BE84BB1A7E9DB000D88E3B /* cat.wav in Resources */,
-				A0BE84BC1A7E9DB000D88E3B /* doge.wav in Resources */,
 				A0BE84AB1A7E716B00D88E3B /* BarBase.png in Resources */,
-				A0BE84BE1A7E9DB000D88E3B /* hackrice.wav in Resources */,
 				A0E2E11E1A7D9222007C85C2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

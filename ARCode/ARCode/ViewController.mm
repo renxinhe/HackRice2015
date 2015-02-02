@@ -294,6 +294,9 @@ void animateFade(UIImageView *img, double alpha){
     [actionSheet addAction:destructiveAction];
     [actionSheet addAction:defaultAction];
     [actionSheet addAction:cancelAction];
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Hello World" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self playSound:@"helloworld"];
+    }]];
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Dog" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self playSound:@"doge"];
     }]];
@@ -308,6 +311,7 @@ void animateFade(UIImageView *img, double alpha){
 }
 
 -(void)playSound:(NSString*) sound{
+    [self.analyzer pause];
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:sound ofType:@"wav"];
     SystemSoundID soundID;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
@@ -319,7 +323,6 @@ void animateFade(UIImageView *img, double alpha){
                                            endSound,
                                            NULL
                                            );
-    [self.analyzer pause];
 }
 
 
