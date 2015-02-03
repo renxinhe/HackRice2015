@@ -73,7 +73,7 @@ static float getLastFreq(NSMutableArray *ar, int * count, float neq, int length)
 
 -(void)didReceiveFreq:(float)freq{
     prevf = freq;
-    NSLog(@"f%.2f",freq);
+    //NSLog(@"f%.2f",freq);
     [ar addObject:[NSNumber numberWithFloat:freq]];
     if(!started) {
         if (ar.count > MINLEN) {
@@ -274,17 +274,68 @@ void animateFade(UIImageView *img, double alpha){
     });
 }
 
-- (void)playSoundList:(NSArray *)soundNames withCompletion:(void (^)(void))completion {
+-(IBAction)send:(id)sender{
     
-    if (![soundNames count]) return completion();
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Send ARCode" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     
-    NSString *firstSound = [soundNames objectAtIndex:0];
-    NSRange remainingRange = NSMakeRange(1, [soundNames count]-1);
-    NSArray *remainingSounds = [soundNames subarrayWithRange:remainingRange];
     
-    [self playSound:firstSound withCompletion:^{
-        [self playSoundList:remainingSounds withCompletion:completion];
+    UIAlertAction *destructiveAction = [UIAlertAction actionWithTitle:@"Google" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self playSound:@"google"];
     }];
+    
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"HackRice" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self playSound:@"hackrice"];
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cat" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self playSound:@"cat"];
+    }];
+    
+    [actionSheet addAction:destructiveAction];
+    [actionSheet addAction:defaultAction];
+    [actionSheet addAction:cancelAction];
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Hello World" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self playSound:@"helloworld"];
+    }]];
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Dog" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self playSound:@"doge"];
+    }]];
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Leaked Baker 13 footage" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self playSound:@"rickroll"];
+    }]];
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }]];
+    
+    [self presentViewController:actionSheet animated:YES completion:nil];
+    
+}
+
+-(void)playSound:(NSString*) sound{
+    [self.analyzer pause];
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:sound ofType:@"wav"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
+    AudioServicesAddSystemSoundCompletion (
+                                           soundID,
+                                           NULL,
+                                           NULL,
+                                           endSound,
+                                           NULL
+                                           );
+}
+
+
+-(IBAction)record:(id)sender{
+    [self.analyzer start];
+}
+
+void endSound (
+               SystemSoundID  ssID,
+               void           *clientData
+               )
+{
+    NSLog(@"Complete");
 }
 
 -(void)clearAr{

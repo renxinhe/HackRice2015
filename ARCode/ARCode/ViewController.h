@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FFTAnalyzerDelegate.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @class FFTAnalyzer;
 
@@ -37,6 +38,8 @@
 @property(nonatomic, weak) IBOutlet UIButton *btn;
 
 -(IBAction)close:(id)sender;
-
+-(IBAction)send:(id)sender;
+-(IBAction)record:(id)sender;
+-(void)playSound:(NSString*) sound;
 @end
 

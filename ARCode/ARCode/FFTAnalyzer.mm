@@ -155,8 +155,19 @@ void AudioCallback( Float32 * buffer, UInt32 frameSize, void * userData )
     bool result = false;
     result = MoAudio::init( SAMPLE_RATE, FRAMESIZE, NUMCHANNELS, false);
     if (!result) { NSLog(@" MoAudio init ERROR"); }
+    [self start];
+}
+
+-(void)start{
+    bool result = false;
+    
     result = MoAudio::start( AudioCallback, NULL );
     if (!result) { NSLog(@" MoAudio start ERROR"); }
+}
+
+
+-(void)pause{
+    MoAudio::stop();
 }
 
 
