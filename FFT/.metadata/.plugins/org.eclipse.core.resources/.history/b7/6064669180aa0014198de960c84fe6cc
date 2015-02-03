@@ -7,11 +7,6 @@ import javax.sound.sampled.LineUnavailableException;
 
 
 public class ToneGeneratorTester {
-	
-	public static String best(int n) {
-		return n <= 0 ? "" : (char)(int)((Math.random() * 26) + 'a') + best(n - 1);
-	}
-	
 	/** Generates a tone, and assigns it to the Clip. */
 	public void generateTone()
 	    throws LineUnavailableException {
